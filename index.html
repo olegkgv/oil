@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Олег Круглов | Эксперт в нефтегазовой отрасли</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+    body {
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #0d4b87;
+    }
+    .logo span {
+      color: #f7941d;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 30px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #0d4b87;
+    }
+    .hero {
+      background: linear-gradient(rgba(13, 75, 135, 0.8), rgba(13, 75, 135, 0.9)), url('https://cdn.pixabay.com/photo/2015/07/09/00/29/oil-refinery-837431_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 180px 0 100px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #f7941d;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #e78200;
+    }
+    .expertise {
+      padding: 80px 0;
+      background-color: #f9f9f9;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-title h2 {
+      font-size: 36px;
+      color: #0d4b87;
+      margin-bottom: 15px;
+    }
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    .expertise-item {
+      text-align: center;
+      padding: 30px;
+    }
+    .expertise-icon {
+      font-size: 48px;
+      color: #0d4b87;
+      margin-bottom: 20px;
+    }
+    .expertise-item h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #0d4b87;
+    }
+    .services {
+      padding: 100px 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    .service-icon {
+      background-color: #0d4b87;
+      color: white;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    .service-content {
+      padding: 30px;
+    }
+    .service-content h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #0d4b87;
+    }
+    .about {
+      padding: 100px 0;
+      background-color: #f9f9f9;
+    }
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: 36px;
+      color: #0d4b87;
+      margin-bottom: 20px;
+    }
+    .about-text p {
+      margin-bottom: 20px;
+    }
+    .experience-list {
+      margin-top: 30px;
+    }
+    .experience-item {
+      margin-bottom: 20px;
+    }
+    .experience-item h4 {
+      font-size: 20px;
+      color: #0d4b87;
+      margin-bottom: 5px;
+    }
+    .experience-item h5 {
+      font-size: 16px;
+      color: #f7941d;
+      margin-bottom: 10px;
+    }
+    .projects {
+      padding: 100px 0;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .project-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+    .project-content {
+      padding: 30px;
+    }
+    .project-content h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #0d4b87;
+    }
+    .cta {
+      background-color: #0d4b87;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 18px;
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 60px 0 30px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #f7941d;
+    }
+    .footer-column ul {
+      list-style: none;
+    }
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-column ul li a:hover {
+      color: #fff;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #444;
+      color: #ccc;
+    }
+    .dashboard-preview {
+      background-color: #f9f9f9;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .dashboard-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .dashboard-header {
+      background-color: #0d4b87;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .dashboard-header h3 {
+      margin: 0;
+    }
+    .dashboard-content {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .dashboard-chart {
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+    }
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+      nav ul {
+        margin-top: 20px;
+      }
+      nav ul li {
+        margin: 0 10px;
+      }
+      .hero h1 {
+        font-size: 36px;
+      }
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      .dashboard-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">Олег <span>Круглов</span></div>
+        <nav>
+          <ul>
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#about">О эксперте</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Цифровая трансформация нефтегазовой отрасли</h1>
+      <p>17+ лет опыта в бурении, аналитике данных и внедрении цифровых решений для повышения операционной эффективности</p>
+      <a href="#contact" class="btn">Обсудить проект</a>
+    </div>
+  </section>
+
+  <section class="expertise">
+    <div class="container">
+      <div class="section-title">
+        <h2>Ключевая экспертиза</h2>
+        <p>Профессиональный опыт в ведущих нефтегазовых компаниях России</p>
+      </div>
+      <div class="expertise-grid">
+        <div class="expertise-item">
+          <div class="expertise-icon">🔍</div>
+          <h3>Цифровая трансформация</h3>
+          <p>Внедрение цифровых решений в процессы бурения и строительства скважин</p>
+        </div>
+        <div class="expertise-item">
+          <div class="expertise-icon">📊</div>
+          <h3>Аналитика данных</h3>
+          <p>Разработка BI-дашбордов и систем мониторинга KPI</p>
+        </div>
+        <div class="expertise-item">
+          <div class="expertise-icon">⚙️</div>
+          <h3>Управление проектами</h3>
+          <p>Координация межфункционального взаимодействия и оценка рисков</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Мои услуги</h2>
+        <p>Комплексные решения для повышения эффективности вашего бизнеса</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <div class="service-content">
+            <h3>Дата инженерия</h3>
+            <p>Разработка архитектуры данных для нефтегазовых компаний. Создание ETL-процессов, интеграция данных из различных источников и построение эффективных хранилищ данных.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <div class="service-content">
+            <h3>Бизнес-анализ</h3>
+            <p>Комплексный анализ бизнес-процессов в бурении и строительстве скважин. Выявление узких мест и разработка рекомендаций по оптимизации операционной деятельности.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <div class="service-content">
+            <h3>Консалтинг</h3>
+            <p>Экспертное сопровождение проектов цифровой трансформации в нефтегазовой отрасли. Разработка стратегий внедрения инноваций с минимизацией рисков.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📑</div>
+          <div class="service-content">
+            <h3>Автоматизация отчетности</h3>
+            <p>Разработка и внедрение систем автоматической генерации отчетов для операций бурения и строительства скважин. Создание систем отслеживания затрат.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <div class="service-content">
+            <h3>BI-дашбордизация</h3>
+            <p>Разработка интерактивных аналитических панелей в Power BI и Apache Superset. Визуализация KPI бурения, отслеживание жизненного цикла скважин и NPV проектов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-preview">
+    <div class="container">
+      <div class="section-title">
+        <h2>Примеры BI-дашбордов</h2>
+        <p>Интерактивные аналитические панели для принятия обоснованных решений</p>
+      </div>
+      <div class="dashboard-container">
+        <div class="dashboard-header">
+          <h3>KPI Бурения и Строительства Скважин</h3>
+          <span>Еженедельный отчет</span>
+        </div>
+        <div class="dashboard-content">
+          <div class="dashboard-chart">График производительности бурения</div>
+          <div class="dashboard-chart">Анализ затрат по категориям</div>
+          <div class="dashboard-chart">Сравнение плановых и фактических показателей</div>
+          <div class="dashboard-chart">Статус проектов по скважинам</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Об эксперте</h2>
+          <p>Более 17 лет я работаю в нефтегазовой отрасли, специализируясь на операциях бурения, цифровой трансформации и аналитике данных. Мой опыт включает работу в ведущих компаниях отрасли, таких как Salym Petroleum Development, SNGS и Сургутнефтегаз.</p>
+          <p>Я помогаю компаниям внедрять цифровые решения, оптимизировать бизнес-процессы и повышать эффективность операций с помощью современных технологий и аналитических инструментов.</p>
+          <div class="experience-list">
+            <div class="experience-item">
+              <h4>Специалист по цифровой трансформации</h4>
+              <h5>Salym Petroleum Development | Москва</h5>
+            </div>
+            <div class="experience-item">
+              <h4>Ведущий эксперт-аналитик по поддержке бурения</h4>
+              <h5>SNGS | Москва</h5>
+            </div>
+            <div class="experience-item">
+              <h4>Буровой супервайзер</h4>
+              <h5>Сургутнефтегаз | Сургут</h5>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg" alt="Профессиональный консалтинг" style="width: 100%; border-radius: 8px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Реализованные проекты</h2>
+        <p>Примеры успешно выполненных проектов в нефтегазовой отрасли</p>
+      </div>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('https://cdn.pixabay.com/photo/2017/01/29/13/21/mobile-devices-2017980_1280.png')"></div>
+          <div class="project-content">
+            <h3>Система отслеживания затрат на строительство скважин</h3>
+            <p>Разработка и внедрение системы Daily Cost для отслеживания затрат при строительстве скважин. Создание аналитических панелей для мониторинга бюджета и выявления отклонений.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('https://cdn.pixabay.com/photo/2018/09/21/09/50/business-3692551_1280.jpg')"></div>
+          <div class="project-content">
+            <h3>Еженедельный KPI-дашборд для бурения</h3>
+            <p>Создание комплексной системы мониторинга ключевых показателей эффективности для операций бурения и заканчивания скважин с использованием Power BI.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image" style="background-image: url('https://cdn.pixabay.com/photo/2018/03/15/16/11/background-3228704_1280.jpg')"></div>
+          <div class="project-content">
+            <h3>Внедрение видеоаналитики для буровых операций</h3>
+            <p>Разработка и внедрение решений видеоаналитики для мониторинга и повышения безопасности операций бурения и капитального ремонта скважин.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Готовы повысить эффективность вашего бизнеса?</h2>
+      <p>Свяжитесь со мной для обсуждения вашего проекта и получения индивидуального предложения</p>
+      <a href="#contact" class="btn">Связаться</a>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Олег Круглов</h3>
+          <p>Эксперт в цифровой трансформации нефтегазовой отрасли с 17-летним опытом работы</p>
+        </div>
+        <div class="footer-column">
+          <h3>Услуги</h3>
+          <ul>
+            <li><a href="#services">Дата инженерия</a></li>
+            <li><a href="#services">Бизнес-анализ</a></li>
+            <li><a href="#services">Консалтинг</a></li>
+            <li><a href="#services">Автоматизация отчетности</a></li>
+            <li><a href="#services">BI-дашбордизация</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Контакты</h3>
+          <ul>
+            <li>Телефон: +7 968 77 86 333</li>
+            <li>Email: krygloff@gmail.com</li>
+            <li>Локация: Москва, Россия</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Олег Круглов. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
